@@ -48,7 +48,9 @@ $ mco docker ps
 SERVER              ID                  IMAGE               COMMAND             CREATED             STATUS              PORTS
 ubu1304             98c5f2f03e14        busybox:latest      /bin/sh             1371815051          Up 2 hours
 ubu1304             468f5d70bcb7        busybox:latest      /bin/sh             1371815051          Up 2 hours
-ubu1304             2dd1cf13f83d        busybox:latest      /bin/sh             1371815051          Up 2 hours
+...
+
+Finished processing 1 / 1 hosts in 71.37 ms
 ````
 
 ####Show *all* containers (including non-running), but limit output to 20 items ####
