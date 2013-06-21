@@ -77,4 +77,5 @@ $ mco docker images
   * rake task
   * implement commands on application client
   * implement more actions 
+  * make agent configurable
 
