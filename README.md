@@ -38,7 +38,9 @@ Please refer to the sites mentioned above for setup instructions.
 
 ##Usage##
 
-The mcollective client application covers a number of use cases similar to the docker console client:
+The mcollective client application covers a number of use cases provided also by the docker console client. It execute them on 
+multiple servers within the collective and returns the result. The output is similar to the docker command but includes the
+server name in the first column.
 
 ####Show running containers####
 ````
