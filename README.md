@@ -79,3 +79,7 @@ $ mco docker images
   * implement more actions 
   * make agent configurable
 
+
+###License###
+This is open source, see LICENSE.txt inside.
+(C) 2013 by Andreas Schmidt, <andreas.schmidt@cassini.de>
