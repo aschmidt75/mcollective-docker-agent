@@ -4,12 +4,13 @@ mcollective-docker-agent
 ##What##
 
 This is a simple MCollective Agent for the Docker API. It uses the [geku/docker-client](https://github.com/geku/docker-client) to access the docker API. 
-On the other end it exposes the docker api services as actions within the mcollective agent.
+On the other end it exposes the services as actions within the mcollective agent. An mcollective application allows for easy
+rpc calls on multiple container hosts.
 
 ##Why##
  
 Maintaining a large container-based setup can become hard. A client would have to connect to individual docker daemons, 
-which does not scale very well. Using the Docker agent, a client can have access to docker daemons on multiple hosts/vms,
+which does not scale very well. Using this agent, a client can have access to docker daemons on multiple hosts/vms,
 controlling all of them in parallel. 
 
 For more information on MCollective, see this [introduction](http://puppetlabs.com/mcollective/introduction/).
@@ -38,7 +39,7 @@ You will need a functional mcollective setup (with server,clients and message bu
 
 The mcollective client application covers a number of use cases similar to the docker console client:
 
-###Show running containers###
+####Show running containers####
 ````
 $ mco docker ps
 
@@ -50,10 +51,25 @@ ubu1304             468f5d70bcb7        busybox:latest      /bin/sh             
 ubu1304             2dd1cf13f83d        busybox:latest      /bin/sh             1371815051          Up 2 hours
 ````
 
-###Show *all* containers (including non-running), but limit output to 20 items ###
-
+####Show *all* containers (including non-running), but limit output to 20 items ####
+````
 $ mco docker ps --all --limit=20
+````
+
+####List containers created before or since other containers####
+````
+$ mco docker ps --all --beforeId=98c5f2f03e14
+$ mco docker ps --all --sinceId=98c5f2f03e14
+````
+
+####Show images####
+````
+$ mco docker images
+````
 
 ##TODOs##
   * gemspec
   * rake task
+  * implement commands on application client
+  * implement actions 
+
