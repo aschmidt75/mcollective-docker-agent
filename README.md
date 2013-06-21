@@ -3,7 +3,7 @@ mcollective-docker-agent
 
 ##What##
 
-This is a simple MCollective Agent for the Docker API. It uses the [geku/docker-client](https://github.com/geku/docker-client) to access the docker API. 
+This is a simple MCollective Agent for the Docker API. It uses [geku/docker-client](https://github.com/geku/docker-client) to access the docker API. 
 On the other end it exposes the services as actions within the mcollective agent. An mcollective application allows for easy
 rpc calls on multiple container hosts.
 
@@ -24,7 +24,7 @@ For more information on MCollective, see this [introduction](http://puppetlabs.c
 ##Installation##
 
 Clone this repo. The contents of agent/ and appliation/ must be copied to the mcollective library directory, 
-which is referenced in /etc/mcollective/server.cfg (and /etc/mcollective/client.cfg)
+which is referenced in /etc/mcollective/server.cfg (and /etc/mcollective/client.cfg):
 
 ````
 $ MCOBASEDIR=$(cat /etc/mcollective/server.cfg | awk -e '/^libdir/ { print $3 }')/mcollective
@@ -34,6 +34,7 @@ $ service mcollective restart
 ````
 
 You will need a functional mcollective setup (with server,clients and message bus) and a functional docker installation.
+Please refer to the sites mentioned above for setup instructions.
 
 ##Usage##
 
@@ -73,5 +74,5 @@ $ mco docker images
   * gemspec
   * rake task
   * implement commands on application client
-  * implement actions 
+  * implement more actions 
 
