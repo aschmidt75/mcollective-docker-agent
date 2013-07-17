@@ -20,6 +20,7 @@ For more information on MCollective, see this [introduction](http://puppetlabs.c
  * MCollective (>=1.3.2) from [puppetlabs](http://puppetlabs.com/puppet/puppet-open-source/), at least mcollective-server on the host side
  * [Docker](http://www.docker.io/)
  * The docker-client from (https://github.com/geku/docker-client)
+   * which needs active_support
 
 ##Installation##
 
@@ -27,7 +28,7 @@ Clone this repo. The contents of agent/ and appliation/ must be copied to the mc
 which is referenced in /etc/mcollective/server.cfg (and /etc/mcollective/client.cfg):
 
 ````
-$ MCOBASEDIR=$(cat /etc/mcollective/server.cfg | awk -e '/^libdir/ { print $3 }')/mcollective
+$ MCOBASEDIR=$(cat /etc/mcollective/server.cfg | awk '/^libdir/ { print $3 }')/mcollective
 $ cp agent/docker* $MCOBASEDIR/agent/
 $ cp application/docker* $MCOBASEDIR/application/
 $ service mcollective restart
