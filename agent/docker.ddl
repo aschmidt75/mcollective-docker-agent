@@ -12,63 +12,66 @@ action "ps", :description => "Retrieve information about running containers" do
     input :all,
         :description    => "Show all containers, not only running ones",
         :optional       => true,
-        :display_as     => "Show All"
+        :display_as     => "Show All",
+        :prompt         => "Show All"
 
     input :limit,
         :description    => "Limit result set",
+        :prompt         => "Limit results",
         :display_as     => "Limit results",
         :optional       => true,
         :type           => :integer
 
     input :sinceId,
-        :prompt     => "Show only containers created since containers with Id",
-        :description=> "Show only containers created since containers with Id",
-        :display_as => "Since ID",
-        :type       => :string,
-        :validation => '^[a-fA-F0-9]+$',
-        :optional   => true,
-        :maxlength  => 12
+        :prompt         => "Show only containers created since containers with Id",
+        :description    => "Show only containers created since containers with Id",
+        :display_as     => "Since ID",
+        :type           => :string,
+        :validation     => '^[a-fA-F0-9]+$',
+        :optional       => true,
+        :maxlength      => 12
 
     input :beforeId,
-        :prompt     => "Show only containers created since containers with Id",
-        :description=> "Show only containers created before containers with Id",
-        :display_as => "Before ID",
-        :type       => :string,
-        :validation => '^[a-fA-F0-9]+$',
-        :optional   => true,
-        :maxlength  => 12
+        :prompt         => "Show only containers created since containers with Id",
+        :description    => "Show only containers created before containers with Id",
+        :display_as     => "Before ID",
+        :type           => :string,
+        :validation     => '^[a-fA-F0-9]+$',
+        :optional       => true,
+        :maxlength      => 12
 
     output :containers,
-        :description => "Output from API call, map of containers with detail data",
-        :display_as  => "Containers"
+        :description    => "Output from API call, map of containers with detail data",
+        :display_as     => "Containers"
 end
 
 action "inspect", :description => "Inspect container details" do
     display :always
 
     input :id,
-        :description=> "Id",
-        :display_as => "Container ID",
-        :type       => :string,
-        :validation => '^[a-fA-F0-9]+$',
-        :optional   => false,
-        :maxlength  => 12
+        :description    => "Id",
+        :display_as     => "Container ID",
+        :type           => :string,
+        :validation     => '^[a-fA-F0-9]+$',
+        :optional       => false,
+        :maxlength      => 12
 
     output :details,
         :description    => "Container details as map",
-        :display_as   => "Details"
+        :display_as     => "Details"
 end
 
 action "diff", :description => "Show container changes" do
     display :always
 
     input :id,
-        :description=> "Id",
-        :display_as => "Container ID",
-        :type       => :string,
-        :validation => '^[a-fA-F0-9]+$',
-        :optional   => false,
-        :maxlength  => 12
+        :description    => "Id",
+        :prompt         => "Container ID",
+        :display_as     => "Container ID",
+        :type           => :string,
+        :validation     => '^[a-fA-F0-9]+$',
+        :optional       => false,
+        :maxlength      => 12
 
     output :changes,
         :description    => "Container changes as map",
