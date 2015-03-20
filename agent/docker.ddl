@@ -13,7 +13,7 @@ action "ps", :description => "Retrieve information about running containers" do
         :description    => "Show all containers, not only running ones",
         :optional       => true,
         :display_as     => "Show All",
-        :type           => :boolean
+        :type           => :boolean,
         :prompt         => "Show All",
 
     input :limit,
