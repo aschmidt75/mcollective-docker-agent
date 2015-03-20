@@ -14,7 +14,7 @@ action "ps", :description => "Retrieve information about running containers" do
         :optional       => true,
         :display_as     => "Show All",
         :type           => :boolean,
-        :prompt         => "Show All",
+        :prompt         => "Show All"
 
     input :limit,
         :description    => "Limit result set",
