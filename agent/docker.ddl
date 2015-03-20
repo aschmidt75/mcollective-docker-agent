@@ -97,10 +97,11 @@ action "stop", :description => "Stop a running container" do
 
     input :id,
         :description=> "Id",
+        :prompt     => "Container ID",
         :display_as => "Container ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
-        :optional   => :false,
+        :optional   => false,
         :maxlength  => 12
 
     output :exitcode,
@@ -113,6 +114,7 @@ action "kill", :description => "Kill a running container" do
 
     input :id,
         :description=> "Id",
+        :prompt     => "Container ID",
         :display_as => "Container ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
@@ -129,6 +131,7 @@ action "restart", :description => "Restart a running container" do
 
     input :id,
         :description=> "Id",
+        :prompt     => "Container ID",
         :display_as => "Container ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
