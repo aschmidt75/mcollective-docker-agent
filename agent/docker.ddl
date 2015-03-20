@@ -11,29 +11,31 @@ action "ps", :description => "Retrieve information about running containers" do
 
     input :all,
         :description    => "Show all containers, not only running ones",
-        :optional       => :true,
+        :optional       => true,
         :display_as     => "Show All"
 
     input :limit,
         :description    => "Limit result set",
         :display_as     => "Limit results",
-        :optional       => :true,
+        :optional       => true,
         :type           => :integer
 
     input :sinceId,
-        :description    => "Show only containers created since containers with Id",
+        :prompt     => "Show only containers created since containers with Id",
+        :description=> "Show only containers created since containers with Id",
         :display_as => "Since ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
-        :optional   => :false,
+        :optional   => true,
         :maxlength  => 12
 
     input :beforeId,
-        :description    => "Show only containers created before containers with Id",
+        :prompt     => "Show only containers created since containers with Id",
+        :description=> "Show only containers created before containers with Id",
         :display_as => "Before ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
-        :optional   => :false,
+        :optional   => true,
         :maxlength  => 12
 
     output :containers,
@@ -45,11 +47,11 @@ action "inspect", :description => "Inspect container details" do
     display :always
 
     input :id,
-        :description    => "Id",
+        :description=> "Id",
         :display_as => "Container ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
-        :optional   => :false,
+        :optional   => false,
         :maxlength  => 12
 
     output :details,
@@ -65,12 +67,12 @@ action "diff", :description => "Show container changes" do
         :display_as => "Container ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
-        :optional   => :false,
+        :optional   => false,
         :maxlength  => 12
 
     output :changes,
         :description    => "Container changes as map",
-        :display_as   => "Changes"
+        :display_as     => "Changes"
 end
 
 action "start", :description => "Start a previously stopped container" do
@@ -78,10 +80,11 @@ action "start", :description => "Start a previously stopped container" do
 
     input :id,
         :description=> "Id",
+        :prompt     => "Container ID",
         :display_as => "Container ID",
         :type       => :string,
         :validation => '^[a-fA-F0-9]+$',
-        :optional   => :false,
+        :optional   => false,
         :maxlength  => 12
 
     output :exitcode,
