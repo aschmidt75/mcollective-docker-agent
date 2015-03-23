@@ -1,4 +1,4 @@
-metadata    :name        => "Docker",
+metadata    :name        => "Docker Access Agent",
             :description => "Agent to access the Docker API via MCollective",
             :author      => "Andreas Schmidt [@aschmidt75]",
             :license     => "Apache 2",
